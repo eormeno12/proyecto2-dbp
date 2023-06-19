@@ -1,0 +1,17 @@
+.shopping-cart{
+    position: relative;
+}
+
+.shopping-cart-count{
+    height: 18px;
+    width: 18px;
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #ffffff;
+    color: #111111;
+    border: 1px solid var(--main-color);;
+    font-size: 1.2rem;
+    text-align: center;
+    border-radius: 50%;
+}

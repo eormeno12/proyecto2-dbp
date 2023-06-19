@@ -1,0 +1,21 @@
+.icon-container{
+    display: inline-block;
+}
+
+.icon-svg{
+    height: 100%;
+    width: 100%;
+}
+
+.icon-container--full{
+    height: 100%;
+    width: 100%;
+}
+
+
+.icon-container--search{
+    position: absolute;
+    left: 32px;
+    height: 16px;
+    width: 16px;
+}

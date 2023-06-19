@@ -1,8 +1,8 @@
-function Checkout(){
+function MyOrder(){
     return(
         <>
         </>
     );
 }
 
-export { Checkout };
+export { MyOrder };

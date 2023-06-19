@@ -1,0 +1,15 @@
+.home-container{
+    width: 100vw;
+    height: 100%;
+    padding-top: 120px;
+    padding-bottom: 64px;
+}
+
+.home-content{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.home-content-w-detail{
+    grid-template-columns: 1fr 1fr;
+}

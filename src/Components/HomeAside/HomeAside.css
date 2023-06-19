@@ -1,0 +1,11 @@
+.home-aside{
+    position: fixed;
+    top: 184px;
+    right: 80px;
+    width: 40vw;
+    height: 70vh;
+    background-color: #ffffff;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 32px;
+    overflow: hidden;
+}

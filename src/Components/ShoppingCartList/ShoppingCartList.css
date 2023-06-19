@@ -1,0 +1,27 @@
+#shopping-cart-list{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    padding: 32px 64px;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+
+#shopping-cart-list h1{
+    font-size: 2.4rem;
+}
+
+#shopping-cart-list h2{
+    font-size: 2.4rem;
+}
+
+#shopping-cart-list ul{
+    width: 100%;
+    overflow-y: scroll;
+}
+
+#shopping-cart-list ul li{
+    padding-right: 32px;
+    margin-bottom: 24px;
+}

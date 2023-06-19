@@ -1,0 +1,24 @@
+.shopping-cart-card{
+    display: flex;
+    height: 90px;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.shopping-cart-card img{
+    height: 90px;
+    object-fit: cover;
+    border-radius: 24px;
+}
+
+
+.shopping-cart-card .product-name{
+    font-size: 1.6rem;
+}
+
+.shopping-cart-card .product-price{
+    font-size: 2rem;
+}

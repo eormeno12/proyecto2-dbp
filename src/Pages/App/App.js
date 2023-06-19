@@ -3,7 +3,7 @@ import { Home } from '../Home';
 import { SignIn } from '../SignIn';
 import { SignUp } from '../SignUp';
 import { MyProfile } from '../MyProfile';
-import { Checkout } from '../Checkout';
+import { MyOrder } from '../MyOrder';
 import { NotFound } from '../NotFound';
 
 import './App.css';
@@ -14,7 +14,7 @@ const AppRoutes = () => {
     {path: '/sign-in', element: <SignIn />},
     {path: '/sign-up', element: <SignUp />},
     {path: '/my-profile', element: <MyProfile />},
-    {path: '/checkout', element: <Checkout />},
+    {path: '/my-order', element: <MyOrder />},
     {path: '/*', element: <NotFound />}
   ]);
 

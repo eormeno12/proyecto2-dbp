@@ -1,0 +1,63 @@
+nav{
+    position: fixed;
+    top: 24px;
+    z-index: 10;
+    width: calc(100% - 128px);
+    height: 92px;
+    padding: 0 64px;
+    margin: 0 64px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+    font-size: 1.6rem;
+    background-color: #ffffff;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 64px;
+}
+
+nav ul{
+    display: flex;
+    width: fit-content;
+    height: 48px;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-item a{
+    text-decoration: none;
+    color: var(--text-color);
+    transition: 0.5s;
+}
+
+.nav-item a:hover{
+    color: var(--main-color);
+}
+
+.nav-item{
+    display: flex;
+    height: 100%;
+    transition: 0.5s;
+    align-items: center;
+    justify-content: center;
+    margin-left: 24px;
+}
+
+.search-bar-container{
+    height: auto;
+    width: 100%;
+    max-width: 800px;
+}
+
+.nav-item:hover{
+    transform: scale(1.05);
+}
+
+#profilePhoto{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}

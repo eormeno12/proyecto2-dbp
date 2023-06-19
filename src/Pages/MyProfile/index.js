@@ -5,4 +5,4 @@ function MyProfile(){
     );
 }
 
-export { MyOrders };
+export { MyProfile };
