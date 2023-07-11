@@ -29,9 +29,10 @@ function ProductCard({productData}){
     const [isProductInCart, setIsProductInCart] = useState(false);
 
     useEffect(() => {
-        const result = shoppingCartList.filter((product) => product.id === productData.id);
-        setIsProductInCart(result.length !== 0)
-    }, [shoppingCartList]);
+        const ids = shoppingCartList.map(product => product.id);
+        const result = ids.includes(productData.id);
+        setIsProductInCart(result)
+    }, [shoppingCartList, productData]);
 
     return (
         <div className='product-card'>

@@ -6,13 +6,35 @@ import { RoundButton } from "../RoundButton";
 import { useNavigate } from "react-router-dom";
 
 import './ShoppingCartList.css';
+import { addOrder, addOrderToUser } from "../../utils/request";
 
 function ShoppingCartList(){
     const navigate = useNavigate();
-    const {shoppingCartList} = useContext(HomeContext);
+    const {shoppingCartList, signInUserId} = useContext(HomeContext);
+
     let totalPrice = 0;
 
-    const onClickMakeOrder = () => {navigate('/my-order')}
+    const createOrder = () => {
+        return {
+            'userID': signInUserId,
+            'products': shoppingCartList.map(product => product.id).join(','),
+            'totalPrice': totalPrice,
+            'date': new Date().toISOString()
+        }
+    }
+
+    const onClickMakeOrder = () => {
+        const order = createOrder()
+        if(!signInUserId){
+            navigate('/sign-in')
+        }else if(order.products !== ''){
+            addOrder(order).then(response => {
+                if(response === 'SUCCESS'){
+                    navigate('/my-orders/last');
+                }
+            })
+        }
+    }
 
     return(
         <HomeAside>
@@ -21,10 +43,10 @@ function ShoppingCartList(){
                 <ul className="shopping-cart-list">
                     {shoppingCartList.map(product => 
                         {
-                            totalPrice += product.price;
+                            totalPrice += parseFloat(product.price);
                             return (
-                            <li>
-                                <ShoppingCartCard key={product.id} id={product.id} image={product.image} name={product.name} price={product.price} />
+                            <li key={product.id}>
+                                <ShoppingCartCard id={product.id} image={product.image} name={product.name} price={product.price} />
                             </li>
                             )
                         }

@@ -3,7 +3,7 @@ import { Icons } from '../../Icons';
 import { HomeContext } from '../../Context/HomeContext';
 import './ShoppingCartCard.css'
 
-function ShoppingCartCard({id, image, name, price}){
+function ShoppingCartCard({id, image, name, price, canDelete=true}){
     const {deleteProductFromShoppingCart} = useContext(HomeContext)
 
     const deleteProductFromCart = () => {deleteProductFromShoppingCart(id);}
@@ -13,7 +13,7 @@ function ShoppingCartCard({id, image, name, price}){
             <img src={image} alt={`${name} reference.`} />
             <span className="product-name">{name}</span>
             <span className="product-price">S/{price}</span>
-            <Icons iconType='x-mark' size='24px' color='var(--main-color)' onClick={deleteProductFromCart}/>
+            {canDelete && <Icons iconType='x-mark' size='24px' color='var(--main-color)' onClick={deleteProductFromCart}/>}
         </div>
     );
 };

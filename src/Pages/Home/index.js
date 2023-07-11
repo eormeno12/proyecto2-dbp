@@ -3,9 +3,7 @@ import { HomeUI } from "./HomeUI";
 
 function Home(){
     return(
-        <HomeContextProvider>
-            <HomeUI/>
-        </HomeContextProvider>
+        <HomeUI/>
     );
 }
 

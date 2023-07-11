@@ -1,22 +1,31 @@
 import { NavLink } from "react-router-dom";
-import { Icons } from "../../Icons";
-
-import './Navbar.css';
 import { ShoppingCart } from "../ShoppingCart";
 
+
+import './Navbar.css';
+import { useContext } from "react";
+import { HomeContext } from "../../Context/HomeContext";
+import { Icons } from "../../Icons";
+
 function Navbar({children}) {
+    const {setSearchCategory, signInUserId} = useContext(HomeContext);
+
+    const onCategoryClick = (category) => {setSearchCategory(category)}
+
     return(
         <nav>
             <ul>
                 <li className="nav-item">
                     <NavLink 
+                        onClick={() => onCategoryClick('')}
                         to='/'>
-                        {/* <Icons type=''/> */}
+                        <Icons iconType='logo' size="48px" width='120px'/>
                     </NavLink>
                 </li>
 
                 <li className="nav-item">
                     <NavLink 
+                        onClick={() => onCategoryClick('Food')}
                         to='/food'>
                         Comida
                     </NavLink>
@@ -24,19 +33,22 @@ function Navbar({children}) {
 
                 <li className="nav-item">
                     <NavLink 
+                        onClick={() => onCategoryClick('Toys')}
                         to='/toys'>
                         Juguetes
                     </NavLink>
                 </li>
                 <li className="nav-item">
                     <NavLink 
+                        onClick={() => onCategoryClick('Clothes')}
                         to='/clothes'>
                         Ropa
                     </NavLink>
                 </li>
                 <li className="nav-item">
                     <NavLink 
-                        to='/wellness'>
+                        onClick={() => onCategoryClick('Welfare')}
+                        to='/welfare'>
                         Bienestar
                     </NavLink>
                 </li>
@@ -48,15 +60,11 @@ function Navbar({children}) {
 
             <ul>
                 <li className="nav-item">
-                    <NavLink 
-                        to='/'
-                    >
-                        <ShoppingCart/>
-                    </NavLink>
+                    <ShoppingCart/>
                 </li>
                 <li className="nav-item">
                     <NavLink 
-                        to='/profile'
+                        to={signInUserId ? '/my-profile' : '/sign-in'}
                     >
                         <img id="profilePhoto" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="Profile Photo."/>
                     </NavLink>

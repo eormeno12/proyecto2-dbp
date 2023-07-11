@@ -1,0 +1,7 @@
+.line-divider{
+    display: inline-block;
+    margin: 12px 0;
+    max-width: 600px;
+    width: 100%;
+    border-bottom: 1px solid #a1a1a1a1;
+}

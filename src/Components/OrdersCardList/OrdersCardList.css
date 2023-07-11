@@ -1,0 +1,32 @@
+.orders-container{
+    width: 100%;
+}
+
+.orders-container .order-span{
+    display: inline-block;
+    width: 100%;
+    color: var(--main-color);
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: 600;
+}
+
+.orders-list{
+    display: flex;
+    max-width: 80vw;
+    height: fit-content;
+    padding: 32px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    gap: 32px;
+}
+
+.orders-list li{
+    height: fit-content;
+    display: inline-block;
+}
+
+.orders-list::-webkit-scrollbar{
+    display: none;
+}

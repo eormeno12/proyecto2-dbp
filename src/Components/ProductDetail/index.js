@@ -1,6 +1,5 @@
 import { useContext } from 'react';
 import { HomeContext } from '../../Context/HomeContext';
-import { RoundIconButton } from '../RoundIconButton';
 import { HomeAside } from '../HomeAside';
 
 import './ProductDetail.css';
