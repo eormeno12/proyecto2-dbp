@@ -1,4 +1,4 @@
-const API = 'http://192.168.1.4:5001'
+const API = 'https://dbp-proyecto2-backend-87b7472b2add.herokuapp.com/'
 
 const getProducts = async () => {
     return await fetch(`${API}/products`)
