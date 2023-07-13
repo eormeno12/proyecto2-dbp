@@ -19,8 +19,14 @@ function HomeContextProvider({children}){
     const [signInUserId, setSignInUserId] = useState('');
 
     useEffect(() => {
-        const storageUserId = localStorage.getItem(USER_ID_LOCAL_KEY, '');
-        setSignInUserId(storageUserId)
+        const storageUserId = localStorage.getItem(USER_ID_LOCAL_KEY);
+
+        if(!storageUserId){
+            localStorage.setItem(USER_ID_LOCAL_KEY, '');
+            setSignInUserId('')
+        }else{
+            setSignInUserId(storageUserId)
+        }
     }, [])
     
     const openHomeAside = () => {setIsHomeAsideOpen(true);}
