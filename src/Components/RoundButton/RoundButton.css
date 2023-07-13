@@ -23,3 +23,10 @@
 .roundButton:hover{
     transform: scale(1.05);
 }
+
+
+.roundButton--logout{
+    background-color: var(--gray);
+    border: 1px solid var(--main-color);
+    color: var(--text-color);
+}

@@ -1,6 +1,20 @@
+import { useNavigate } from 'react-router-dom';
+import { RoundButton } from '../RoundButton';
 import './ProfileInfo.css';
+import { USER_ID_LOCAL_KEY } from '../../constants';
+import { useContext } from 'react';
+import { HomeContext } from '../../Context/HomeContext';
 
 function ProfileInfo({name, email, dni}){
+    const navigate = useNavigate();
+    const {setSignInUserId} = useContext(HomeContext);
+
+    const handleLogout = () => {
+      localStorage.setItem(USER_ID_LOCAL_KEY, '');
+      setSignInUserId('');
+      navigate('/', {replace: true});
+    }
+
     return(
         <div className="profile-info-container">
           <div className="profile-info">
@@ -10,6 +24,7 @@ function ProfileInfo({name, email, dni}){
             <span id="profile-name">{name}</span>  
             <span id="profile-email">{email}</span> 
             <span id="profile-username">{dni}</span>
+            <RoundButton text='Cerrar sesión' onClick={handleLogout} type='logout'/>
           </div>
         </div>
     );

@@ -1,9 +1,17 @@
+import { Navigate } from "react-router-dom";
 import { BackButton } from "../../Components/BackButton";
 import { SignUpUser } from "../../Components/SignUpUser";
+import { useContext } from "react";
+import { HomeContext } from "../../Context/HomeContext";
 
 import './SignUp.css';
 
 function SignUp(){
+
+const {signInUserId } = useContext(HomeContext);
+  
+  if(signInUserId !== "") return <Navigate to='/'/>
+  
     return ( 
     <>
         <BackButton />

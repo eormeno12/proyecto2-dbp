@@ -6,7 +6,7 @@ import { RoundButton } from "../RoundButton";
 import { useNavigate } from "react-router-dom";
 
 import './ShoppingCartList.css';
-import { addOrder, addOrderToUser } from "../../utils/request";
+import { addOrder } from "../../utils/request";
 
 function ShoppingCartList(){
     const navigate = useNavigate();
@@ -25,7 +25,7 @@ function ShoppingCartList(){
 
     const onClickMakeOrder = () => {
         const order = createOrder()
-        if(!signInUserId){
+        if(signInUserId === ''){
             navigate('/sign-in')
         }else if(order.products !== ''){
             addOrder(order).then(response => {

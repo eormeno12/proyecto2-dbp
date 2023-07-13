@@ -3,7 +3,7 @@ import { InputField } from "../InputField";
 import { LineDividerWText } from "../LineDividerWText";
 import { RoundButton } from "../RoundButton";
 import { validateEmail, validateIsNotEmpty, validatePassword, validatePhone } from "../../utils/validation";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import { signUp } from "../../utils/request";
 
 function SignUpUser() {

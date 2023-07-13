@@ -1,5 +1,6 @@
 import { createContext, useState, useEffect } from 'react'
 import { getProducts, getProductsByCategory } from '../utils/request';
+import { USER_ID_LOCAL_KEY } from '../constants';
 
 
 const HomeContext = createContext();
@@ -15,7 +16,12 @@ function HomeContextProvider({children}){
     const [productClicked, setProductClicked] = useState({});
     const [isShoppingCartClicked, setIsShoppingCartClicked] = useState(false)
     const [shoppingCartList, setShoppingCartList] = useState([]);
-    const [signInUserId, setSignInUserId] = useState(null);
+    const [signInUserId, setSignInUserId] = useState('');
+
+    useEffect(() => {
+        const storageUserId = localStorage.getItem(USER_ID_LOCAL_KEY, '');
+        setSignInUserId(storageUserId)
+    }, [])
     
     const openHomeAside = () => {setIsHomeAsideOpen(true);}
     const closeHomeAside = () => {setIsHomeAsideOpen(false);}
